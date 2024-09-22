@@ -66,7 +66,7 @@ public class FormTest {
         $("#city input").pressEnter();
         $("#submit").click();
 
-        //Проверка
+        //Проверка таблицы
         $(".modal-content").shouldHave (text("Thanks for submitting the form"));
         $(".modal-content").shouldHave (text("Stas Erohov"));
         $(".modal-content").shouldHave (text("example@example.com"));
