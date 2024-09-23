@@ -1,6 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -10,7 +12,7 @@ public class TextBoxPage {
             emailInput = $("#userEmail"),
             currentAddressInput = $("#currentAddress"),
             permanentAddressInput = $("#permanentAddress"),
-            submitButton = $("#submit");
+            submitInput = $("button#submit");
 
     public TextBoxPage openPage(String url) {
         open(url);
@@ -37,7 +39,13 @@ public class TextBoxPage {
         return this;
     }
 
-    public void submitForm() {
-        submitButton.click();
+    public void clickInput() {
+        submitInput.click();
+    }
+
+
+    public TextBoxPage checkResult(String key, String value) {
+        $("div#output").shouldHave(text(key + value));
+        return this;
     }
 }

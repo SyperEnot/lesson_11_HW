@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 
-public class PageObjectsFormTests extends FormTest {
+public class PageObjectsFormTests extends TestBase {
 
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -16,7 +16,7 @@ public class PageObjectsFormTests extends FormTest {
             subjects = "Arts",
             hobbies = "Reading",
             picture = "Pika-pika.jpg",
-            currentAddres = "Saint-Petersburg, Parfenovsk. street, 7",
+            currentAddress = "Saint-Petersburg, Parfenovsk. street, 7",
             state = "NCR",
             city = "Noida";
 
@@ -26,13 +26,13 @@ public class PageObjectsFormTests extends FormTest {
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
-                .setGenterWrapper(genderUser)
+                .setGenderWrapper(genderUser)
                 .setUserNumber(userNumber)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
                 .setSubjectsInput(subjects)
                 .setHobbiesWrapperInput(hobbies)
                 .setUploadPicture(picture)
-                .setCurrentAddress(currentAddres)
+                .setCurrentAddress(currentAddress)
                 .setChooseState(state)
                 .setChooseCity(city)
                 .pressSubmit();
@@ -45,7 +45,7 @@ public class PageObjectsFormTests extends FormTest {
                 .checkResult("Subjects", subjects)
                 .checkResult("Hobbies", hobbies)
                 .checkResult("Picture", picture)
-                .checkResult("Address", currentAddres)
+                .checkResult("Address", currentAddress)
                 .checkResult("State and City", state + " " + city);
     }
 
@@ -55,7 +55,7 @@ public class PageObjectsFormTests extends FormTest {
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
-                .setGenterWrapper(genderUser)
+                .setGenderWrapper(genderUser)
                 .setUserNumber(userNumber)
                 .pressSubmit();
 
