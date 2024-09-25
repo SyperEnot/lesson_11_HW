@@ -1,24 +1,28 @@
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
+import utils.RandomDataUtils;
 
 
 public class PageObjectsFormTests extends TestBase {
 
 
     RegistrationPage registrationPage = new RegistrationPage();
+    RandomDataUtils ra = new RandomDataUtils();
 
-    private String firstName = "Stas",
-            lastName = "Erohov",
-            userEmail = "example@example.com",
-            genderUser = "Male",
-            userNumber = "8901234567",
-            dayOfBirth = "07", monthOfBirth = "October", yearOfBirth = "1993",
-            subjects = "Arts",
-            hobbies = "Reading",
+    private String firstName = ra.FirstName(),
+            lastName = ra.LastName(),
+            userEmail = ra.Email(),
+            genderUser = ra.Gender(),
+            userNumber = ra.Phone(),
+            monthOfBirth = ra.monthOfBirth(),
+            yearOfBirth = ra.yearOfBirth(),
+            dayOfBirth = ra.dayOfBirth(),
             picture = "Pika-pika.jpg",
-            currentAddress = "Saint-Petersburg, Parfenovsk. street, 7",
-            state = "NCR",
-            city = "Noida";
+            subjects = ra.Subject(),
+            hobbies = ra.Hobby(),
+            currentAddress = ra.Address(),
+            state = ra.State(),
+            city = ra.City(state);
 
     @Test
     void fillFieldsTest() {
