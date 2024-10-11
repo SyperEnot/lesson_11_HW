@@ -56,13 +56,18 @@ public class RandomDataUtils {
         return faker.options().option("NCR", "Haryana", "Uttar Pradesh");
     }
 
-    public String City(String state) {
-        return switch (state) {
-            case "NCR" -> faker.options().option("Delhi", "Gurgaon", "Noida");
-            case "Uttar Pradesh" -> faker.options().option("Lucknow", "Mathura", "Varanasi");
-            case "Haryana" -> faker.options().option("Chandigarh", "Gurgaon", "Karnal");
-            case "Rajasthan" -> faker.options().option("Jaipur", "Jaisalmer");
-            default -> "";
-        };
+    public String getCityRandom(String state) {
+        switch (state) {
+            case "NCR":
+                return faker.options().option("Delhi", "Gurgaon", "Noida");
+            case "Uttar Pradesh":
+                return faker.options().option("Agra", "Lucknow", "Merrut");
+            case "Haryana":
+                return faker.options().option("Karnal", "Panipat");
+            case "Rajasthan":
+                return faker.options().option("Jaipur", "Jaiselmer");
+            default:
+                return state;
+        }
     }
 }

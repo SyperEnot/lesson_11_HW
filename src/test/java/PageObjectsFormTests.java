@@ -24,7 +24,7 @@ public class PageObjectsFormTests extends TestBase {
             hobbies = ra.Hobby(),
             currentAddress = ra.Address(),
             state = ra.State(),
-            city = ra.City(state);
+            city = ra.getCityRandom(state);
 
     @Test
     @DisplayName("Заполнение всех полей")
