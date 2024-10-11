@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.RandomDataUtils;
@@ -25,6 +26,7 @@ public class PageObjectsFormTests extends TestBase {
             city = ra.City(state);
 
     @Test
+    @DisplayName("Заполнение всех полей")
     void fillFieldsTest() {
         registrationPage.openPage()
                 .setFirstName(firstName)
@@ -54,6 +56,7 @@ public class PageObjectsFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Заполнение обязательных полей")
     void partCompleteFormTest() {
 
         registrationPage.openPage()
@@ -69,6 +72,7 @@ public class PageObjectsFormTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Форма не заполнена")
     void negativeCompleteFormTest() {
 
         registrationPage.openPage()
