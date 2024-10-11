@@ -1,9 +1,10 @@
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.RandomDataUtils;
 
-
+@Tag("simple")
 public class PageObjectsFormTests extends TestBase {
 
 
